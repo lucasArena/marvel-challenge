@@ -1,6 +1,6 @@
 # Desafio da marvel :godmode:
 
-A aplicação, para para uso somente pessoal, não havendo fins comerciais e foi realizada por um desafio prosposto
+A aplicação, para uso somente pessoal, não havendo fins comerciais e foi realizada por um desafio prosposto
 
 ### Tecnologias utilizadas:
  - *ReactJS*
