@@ -27,11 +27,12 @@ export default function DashboardView({
   function handleFilterCharacter(value) {
     setFilter(value);
     setPage(0);
+    setFirstPage(true);
     handleFilter(filter);
   }
 
   function validateLastPage() {
-    if (total < (page + 1) * 5) {
+    if (total <= (page + 1) * 5) {
       setLastPage(true);
     } else {
       setLastPage(false);
@@ -59,10 +60,12 @@ export default function DashboardView({
 
   useEffect(() => {
     handleFilterCharacter(filter);
+    // eslint-disable-next-line
   }, [filter]);
 
   useEffect(() => {
     validateLastPage();
+    // eslint-disable-next-line
   }, [total, page]);
 
   return (
