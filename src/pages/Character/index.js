@@ -8,7 +8,7 @@ import Loading from '~/components/Loading';
 
 import api from '~/services/api';
 
-export default function CharacterInfo({ location: { state: character } }) {
+export default function Character({ location: { state: character } }) {
   const [comics, setComics] = useState([]);
   const [loading, setLoading] = useState(false);
 
@@ -40,19 +40,19 @@ export default function CharacterInfo({ location: { state: character } }) {
           <p>{character.description}</p>
         </div>
       </Main>
-      <h1>Fasiculo</h1>
+      <h1>Fasiculos</h1>
       {loading ? (
         <Loading size={64} color="#666" />
       ) : (
-        comics.map((story, index) => (
-          <StoryCard key={story.name} story={story} target="_blank" />
+        comics.map((story) => (
+          <StoryCard key={story.id} story={story} target="_blank" />
         ))
       )}
     </Container>
   );
 }
 
-CharacterInfo.propTypes = {
+Character.propTypes = {
   location: PropTypes.shape({
     state: PropTypes.object,
   }).isRequired,

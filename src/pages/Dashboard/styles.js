@@ -25,3 +25,10 @@ export const Title = styled.div`
     }
   }
 `;
+
+export const VisitedCharacter = styled.div`
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #999;
+  margin-bottom: 20px;
+`;

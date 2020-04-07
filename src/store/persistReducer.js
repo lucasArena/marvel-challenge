@@ -6,7 +6,7 @@ export default (reducers) => {
     {
       key: 'marvel-challenge',
       storage,
-      whitelist: ['auth'],
+      whitelist: ['auth', 'characters'],
     },
     reducers
   );

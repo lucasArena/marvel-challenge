@@ -22,6 +22,9 @@ function* signInRequest({ payload }) {
       },
     });
 
+    api.defaults.params.hash = hash;
+    api.defaults.params.apikey = pubKey;
+
     yield put(signInSucess(pubKey, hash));
   } catch (err) {
     console.tron.log(err);

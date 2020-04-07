@@ -42,3 +42,20 @@ export const Container = styled.button`
     }
   }
 `;
+
+export const NameContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  span {
+    margin-left: auto;
+  }
+
+  p {
+    padding: 10px 15px;
+    background: #ed4325;
+    color: #fff;
+    font-weight: bold;
+    font-size: 12px;
+  }
+`;

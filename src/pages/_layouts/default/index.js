@@ -21,6 +21,4 @@ DefaultLayout.propTypes = {
   initialPage: PropTypes.bool,
 };
 
-DefaultLayout.defaultProps = {
-  initialPage: true,
-};
+DefaultLayout.defaultProps = {};

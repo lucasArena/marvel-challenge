@@ -31,7 +31,7 @@ export default function SignIn() {
         <img src={Logo} alt="Logo do challenge Marvel" />
         <Input name="pubKey" placeholder="Chave pública" />
         <Input name="privKey" placeholder="Chave privada" />
-        <SubmitButton type="submit" loading={loading} disabled>
+        <SubmitButton type="submit" load={loading} disabled>
           {loading ? <Loading color="#FFF" size={24} /> : 'Acessar'}
         </SubmitButton>
       </Form>

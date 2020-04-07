@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { parseISO, format } from 'date-fns';
 
-import { Container, Title } from './styles';
+import { Container, Title, VisitedCharacter } from './styles';
 
 import CharacterCard from '~/components/CharacterCard';
 import DashboardView from '~/components/DashboardView';
 
-import history from '~/services/history';
 import api from '~/services/api';
 
 export default function Dashboard() {
+  const reduxCharacters = useSelector((state) => state.characters.items);
+
   const [characters, setCharacters] = useState([]);
+  const [visitedCharacters, setVisitedCharacters] = useState(reduxCharacters);
   const [loading, setLoading] = useState(false);
   const [total, setTotal] = useState(0);
 
@@ -31,12 +34,21 @@ export default function Dashboard() {
       modified: format(parseISO(c.modified), 'dd/MM/yyyy HH:II:ss'),
     }));
 
+    const allCharacters = formattedResponse.filter(
+      (c) => !visitedCharacters.some((e) => e.id === c.id)
+    );
+
     setTotal(response.data.total);
-    setCharacters(formattedResponse);
+    setCharacters(allCharacters);
     setLoading(false);
   }
 
   function handlePaginate(currentPage, filter) {
+    if (currentPage !== 0) {
+      setVisitedCharacters([]);
+    } else {
+      setVisitedCharacters(reduxCharacters);
+    }
     loadCharacters(currentPage, filter);
   }
 
@@ -56,24 +68,31 @@ export default function Dashboard() {
         handleFilter={handleFilter}
         total={total}
       >
-        <Title>
-          <div>
-            <span>Nome</span>
-          </div>
-          <div>
-            <span>Decrição</span>
-          </div>
-          <div>
-            <span>Última atualização</span>
-          </div>
-        </Title>
-        {characters.map((character) => (
-          <CharacterCard
-            key={character.id}
-            character={character}
-            onClick={() => history.push(`/character/${character.id}`)}
-          />
-        ))}
+        <>
+          <Title>
+            <div>
+              <span>Nome</span>
+            </div>
+            <div>
+              <span>Decrição</span>
+            </div>
+            <div>
+              <span>Última atualização</span>
+            </div>
+          </Title>
+          <VisitedCharacter>
+            {visitedCharacters.map((visitedCharacter) => (
+              <CharacterCard
+                key={visitedCharacter.id}
+                character={visitedCharacter}
+                recentVisited
+              />
+            ))}
+          </VisitedCharacter>
+          {characters.map((character) => (
+            <CharacterCard key={character.id} character={character} />
+          ))}
+        </>
       </DashboardView>
     </Container>
   );

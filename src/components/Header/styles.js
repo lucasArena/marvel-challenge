@@ -34,13 +34,22 @@ export const MainLogo = styled.button`
 `;
 
 export const ButtonGoBack = styled.button`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
   margin-left: 30px;
   padding: 10px 25px;
   font-size: 16px;
   font-weight: bold;
   color: #fff;
-  background: #0889fa;
+  background: #ed4325;
   border-radius: 4px;
+
+  svg {
+    margin-right: 5px;
+  }
 `;
 
 export const SignoutButton = styled.button`

@@ -98,11 +98,11 @@ export default function DashboardView({
 }
 
 DashboardView.propTypes = {
-  children: PropTypes.object.isRequired,
+  children: PropTypes.oneOfType([PropTypes.func, PropTypes.element]).isRequired,
   handlePaginate: PropTypes.func.isRequired,
   handleFilter: PropTypes.func.isRequired,
-  loading: PropTypes.func,
-  total: PropTypes.func,
+  loading: PropTypes.bool,
+  total: PropTypes.number,
 };
 
 DashboardView.defaultProps = {

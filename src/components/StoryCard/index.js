@@ -32,6 +32,10 @@ export default function StoryCard({ story }) {
 StoryCard.propTypes = {
   story: PropTypes.shape({
     title: PropTypes.string.isRequired,
+    thumbnail: PropTypes.shape({
+      path: PropTypes.string,
+      extension: PropTypes.string,
+    }),
     pageCount: PropTypes.number.isRequired,
     description: PropTypes.string,
   }).isRequired,

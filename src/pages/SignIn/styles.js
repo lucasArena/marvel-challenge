@@ -36,7 +36,7 @@ export const Container = styled.div`
 `;
 
 export const SubmitButton = styled.button.attrs((props) => ({
-  disabled: props.loading,
+  disabled: props.load,
 }))`
   align-self: stretch;
   padding: 20px 30px;
