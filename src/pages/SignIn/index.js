@@ -10,7 +10,7 @@ import { Container, SubmitButton } from './styles';
 
 import Loading from '~/components/Loading';
 
-// import Logo from '~/assets/logo.png';
+import Logo from '~/assets/logo.png';
 
 export default function SignIn() {
   const dispatch = useDispatch();
@@ -27,8 +27,8 @@ export default function SignIn() {
 
   return (
     <Container>
-      <Form schema={schema} onSubmit={handleSignIn} data-testid="signin-form">
-        {/* <img src={Logo} alt="Logo do challenge Marvel" /> */}
+      <Form schema={schema} onSubmit={handleSignIn}>
+        <img src={Logo} alt="Logo do challenge Marvel" />
         <Input data-testid="pubKey" name="pubKey" placeholder="Chave pública" />
         <Input
           data-testid="privKey"

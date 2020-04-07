@@ -9,16 +9,11 @@ A aplicação, para uso somente pessoal, não havendo fins comerciais e foi real
  - *Redux Persistor*
  - *Css*
 
-### Para iniciar o projeto, basta somente realizar o clone do repositório para a sua maquina local e assim executar o comando:
+### Para iniciar o projeto, basta somente realizar o clone do repositório para a sua maquina local e assim executar os comandos:
 
 ```bash 
+yarn ou npm install
 yarn/npm start
-```
-
-### Para realizar os testes automatizados, basta executar o comando:
-
-```bash 
-yarn/npm test
 ```
 
 ### Para executar o build. basta executar o comando:
