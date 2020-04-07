@@ -24,6 +24,7 @@ function* signInRequest({ payload }) {
 
     api.defaults.params.hash = hash;
     api.defaults.params.apikey = pubKey;
+    api.defaults.params.ts = 1;
 
     yield put(signInSucess(pubKey, hash));
   } catch (err) {
@@ -38,6 +39,7 @@ function setHash({ payload }) {
 
   api.defaults.params.hash = payload.auth.hash && payload.auth.hash;
   api.defaults.params.apikey = payload.auth.pubKey && payload.auth.pubKey;
+  api.defaults.params.ts = 1;
 }
 
 export default all([

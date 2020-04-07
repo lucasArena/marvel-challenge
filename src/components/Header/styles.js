@@ -50,6 +50,18 @@ export const ButtonGoBack = styled.button`
   svg {
     margin-right: 5px;
   }
+
+  @media only screen and (max-width: 900px) {
+    background: transparent;
+
+    svg {
+      background: #ed4325;
+    }
+
+    span {
+      display: none;
+    }
+  }
 `;
 
 export const SignoutButton = styled.button`

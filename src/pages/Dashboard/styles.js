@@ -24,6 +24,10 @@ export const Title = styled.div`
       color: #999;
     }
   }
+
+  @media only screen and (max-width: 900px) {
+    display: none;
+  }
 `;
 
 export const VisitedCharacter = styled.div`

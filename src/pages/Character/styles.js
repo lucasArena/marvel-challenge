@@ -43,4 +43,13 @@ export const Main = styled.div`
       margin-bottom: 20px;
     }
   }
+
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+
+    div {
+      text-align: center;
+      padding: 30px;
+    }
+  }
 `;

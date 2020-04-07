@@ -38,7 +38,7 @@ export default function Header({ initialPage }) {
           {!initialPage && (
             <ButtonGoBack type="button" onClick={() => history.goBack()}>
               <FiArrowLeft color="#FFF" size={24} />
-              Voltar
+              <span>Voltar</span>
             </ButtonGoBack>
           )}
         </LogoContainer>

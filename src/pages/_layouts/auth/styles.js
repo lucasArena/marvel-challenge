@@ -14,6 +14,10 @@ export const ContentContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: 900px) {
+    flex: 1;
+  }
 `;
 
 export const Cover = styled.div`
@@ -25,4 +29,8 @@ export const Cover = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (max-width: 900px) {
+    display: none;
+  }
 `;

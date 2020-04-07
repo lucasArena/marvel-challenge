@@ -13,6 +13,11 @@ export const Container = styled.div`
   &:hover {
     box-shadow: 0px 10px 50px 0px rgba(0, 0, 0, 0.2);
   }
+
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
 
 export const StoryContent = styled.div`

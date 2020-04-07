@@ -38,7 +38,20 @@ export const Container = styled.button`
       span {
         margin-right: auto;
         text-align: center;
+
+        @media only screen and (max-width: 900px) {
+          margin-right: 0;
+        }
       }
+    }
+  }
+
+  @media only screen and (max-width: 900px) {
+    flex-direction: column;
+
+    div {
+      flex-direction: column;
+      margin-bottom: 20px;
     }
   }
 `;

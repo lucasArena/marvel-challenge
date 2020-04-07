@@ -17,6 +17,10 @@ export const SearchBar = styled.div`
       font-size: 16px;
     }
   }
+
+  @media only screen and (max-width: 900px) {
+    margin-bottom: 30px;
+  }
 `;
 
 export const Pagination = styled.div`

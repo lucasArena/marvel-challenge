@@ -27,10 +27,14 @@ export default function SignIn() {
 
   return (
     <Container>
-      <Form schema={schema} onSubmit={handleSignIn}>
+      <Form schema={schema} onSubmit={handleSignIn} data-testid="signin-form">
         <img src={Logo} alt="Logo do challenge Marvel" />
-        <Input name="pubKey" placeholder="Chave pública" />
-        <Input name="privKey" placeholder="Chave privada" />
+        <Input data-testid="pubKey" name="pubKey" placeholder="Chave pública" />
+        <Input
+          data-testid="privKey"
+          name="privKey"
+          placeholder="Chave privada"
+        />
         <SubmitButton type="submit" load={loading} disabled>
           {loading ? <Loading color="#FFF" size={24} /> : 'Acessar'}
         </SubmitButton>
