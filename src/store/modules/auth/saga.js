@@ -35,10 +35,10 @@ function* signInRequest({ payload }) {
 }
 
 function setHash({ payload }) {
-  if (!payload.auth) return;
+  if (!payload) return;
 
-  api.defaults.params.hash = payload.auth.hash && payload.auth.hash;
-  api.defaults.params.apikey = payload.auth.pubKey && payload.auth.pubKey;
+  api.defaults.params.hash = payload.auth && payload.auth.hash;
+  api.defaults.params.apikey = payload.auth && payload.auth.pubKey;
   api.defaults.params.ts = 1;
 }
 
